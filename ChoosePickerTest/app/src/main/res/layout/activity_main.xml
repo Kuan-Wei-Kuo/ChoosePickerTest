@@ -5,9 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewPager"
+    <com.example.kuo.choosepickertest.ChoosePikcer
+        android:id="@+id/choosePicker"
         android:layout_width="match_parent"
-        android:layout_height="250dp"/>
+        android:layout_height="match_parent"></com.example.kuo.choosepickertest.ChoosePikcer>
 
 </RelativeLayout>

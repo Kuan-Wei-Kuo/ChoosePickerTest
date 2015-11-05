@@ -23,7 +23,7 @@ public class ChooseGridView extends GridView {
         int heightSpec;
 
         if (getLayoutParams().height == LayoutParams.WRAP_CONTENT) {
-            heightSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2, MeasureSpec.AT_MOST);
+            heightSpec = MeasureSpec.makeMeasureSpec(MEASURED_SIZE_MASK, MeasureSpec.AT_MOST);
         } else {
             heightSpec = heightMeasureSpec;
         }

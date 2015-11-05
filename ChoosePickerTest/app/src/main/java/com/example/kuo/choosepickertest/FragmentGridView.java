@@ -25,10 +25,9 @@ public class FragmentGridView extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_gridview, container, false);
-
-        initChooseItem();
-        findView(view);
-        initView();
+        view.setBackgroundColor(getResources().getColor(android.R.color.holo_blue_light));
+        //findView(view);
+        //initView();
 
         return  view;
     }
@@ -41,7 +40,6 @@ public class FragmentGridView extends Fragment {
 
         choosePickerGridAdapter = new ChoosePickerGridAdapter(getActivity(), chooseItems);
 
-        chooseGridView.setColumnWidth(50);
         chooseGridView.setNumColumns(5);
         chooseGridView.setAdapter(choosePickerGridAdapter);
         chooseGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -55,19 +53,14 @@ public class FragmentGridView extends Fragment {
 
             }
         });
-    }
-
-    private void initChooseItem() {
-
-        String[] chooseTexts = {"餐點", "飲料", "零時", "購物", "日常用品", "帳單", "住房", "車馬", "娛樂", "其他"};
-
-        for(int i = 0 ; i < chooseTexts.length ; i++) {
-            ChooseItem chooseItem = new ChooseItem();
-            chooseItem.setChooseIcon(R.mipmap.ic_launcher);
-            chooseItem.setChooseText(chooseTexts[i]);
-            chooseItems.add(chooseItem);
-        }
 
     }
 
+    public void setChooseItems(ArrayList<ChooseItem> chooseItems) {
+        this.chooseItems = chooseItems;
+    }
+
+    public void addChooseItems(ChooseItem chooseItem) {
+        this.chooseItems.add(chooseItem);
+    }
 }
